@@ -1,0 +1,16 @@
+.banner-estilos {
+  background: url("https://ossaingconst.com.ar/wp-content/uploads/2023/11/cropped-3-11.jpg")
+    no-repeat center center;
+  background-size: cover;
+  height: 60vh;
+}
+
+.btn-home {
+  width: 120px; 
+}
+
+.imagen-home {
+  height: 280px;
+  width: 500px;
+  object-fit: cover;
+}
