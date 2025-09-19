@@ -25,7 +25,7 @@ function Home() {
     {
       id: "estacion",
       titulo: "Estaciones reguladoras",
-      desc: "Proyecto, construcción y mantenimiento de estaciones reguladoras de presión. ",
+      desc: "Proyecto, construcción y mantenimiento de estaciones reguladoras de presión.",
       img: Camara,
     },
     {
@@ -33,6 +33,47 @@ function Home() {
       titulo: "Otros servicios",
       desc: "Servicios-Flota-Herramientas",
       img: Otroserv,
+    },
+  ];
+
+  const serviciosExtra = [
+    "GAS NATURAL",
+    "AGUA POTABLE",
+    "CLOACAS",
+    "ENERGIA ELÉCTRICA",
+    "CORDON CUNETA",
+  ];
+
+  const proyectos = [
+    { id: 1, img: "/images/proyecto1.jpg", alt: "Proyecto 1" },
+    { id: 2, img: "/images/proyecto2.jpg", alt: "Proyecto 2" },
+    { id: 3, img: "/images/proyecto3.jpg", alt: "Proyecto 3" },
+  ];
+
+  const clientes = [
+    { id: 1, img: "/images/cliente1.png", alt: "Cliente 1" },
+    { id: 2, img: "/images/cliente2.png", alt: "Cliente 2" },
+    { id: 3, img: "/images/cliente3.png", alt: "Cliente 3" },
+  ];
+
+  const estadisticas = [
+    {
+      id: 1,
+      icon: <FaCheckCircle size={40} className="text-success mb-2" />,
+      valor: "100%",
+      texto: "Éxito",
+    },
+    {
+      id: 2,
+      icon: <FaProjectDiagram size={40} className="text-primary mb-2" />,
+      valor: "150+",
+      texto: "Proyectos",
+    },
+    {
+      id: 3,
+      icon: <FaUsers size={40} className="text-warning mb-2" />,
+      valor: "20+",
+      texto: "Años experiencia",
     },
   ];
 
@@ -60,9 +101,11 @@ function Home() {
                 servicios también ofrecemos:
               </p>
               <p>
-                GAS NATURAL <br /> AGUA POTABLE <br />
-                CLOACAS <br />
-                ENERGIA ELÉCTRICA <br /> CORDON CUNETA
+                {serviciosExtra.map((serv, i) => (
+                  <span key={i}>
+                    {serv} <br />
+                  </span>
+                ))}
               </p>
             </Col>
 
@@ -85,11 +128,7 @@ function Home() {
             {servicios.map((s) => (
               <div key={s.id} className="col-md-3 mb-4">
                 <div className="card h-100 shadow d-flex flex-column">
-                  <img
-                    src={s.img}
-                    className="card-img-top card-img-servicio"
-                    alt={s.titulo}
-                  />
+                  <img src={s.img} className="card-img-top" alt={s.titulo} />
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title">{s.titulo}</h5>
                     <p className="card-text flex-grow-1">{s.desc}</p>
@@ -110,27 +149,11 @@ function Home() {
       <section id="proyectos" className="py-5 container">
         <h2>Proyectos</h2>
         <div className="row">
-          <div className="col-md-4">
-            <img
-              src="/images/proyecto1.jpg"
-              className="img-fluid rounded"
-              alt="Proyecto"
-            />
-          </div>
-          <div className="col-md-4">
-            <img
-              src="/images/proyecto2.jpg"
-              className="img-fluid rounded"
-              alt="Proyecto"
-            />
-          </div>
-          <div className="col-md-4">
-            <img
-              src="/images/proyecto3.jpg"
-              className="img-fluid rounded"
-              alt="Proyecto"
-            />
-          </div>
+          {proyectos.map((p) => (
+            <div key={p.id} className="col-md-4">
+              <img src={p.img} className="img-fluid rounded" alt={p.alt} />
+            </div>
+          ))}
         </div>
       </section>
 
@@ -138,9 +161,9 @@ function Home() {
         <div className="container text-center">
           <h2>Nuestros clientes</h2>
           <div className="d-flex justify-content-center gap-5 flex-wrap mt-4">
-            <img src="/images/cliente1.png" alt="Cliente 1" height="50" />
-            <img src="/images/cliente2.png" alt="Cliente 2" height="50" />
-            <img src="/images/cliente3.png" alt="Cliente 3" height="50" />
+            {clientes.map((c) => (
+              <img key={c.id} src={c.img} alt={c.alt} height="50" />
+            ))}
           </div>
         </div>
       </section>
@@ -183,21 +206,13 @@ function Home() {
       <section className="container my-5">
         <div className="align-items-center bg-light rounded p-4 shadow-sm">
           <div className="d-flex justify-content-center text-center flex-wrap">
-            <div className="col-4 mb-3">
-              <FaCheckCircle size={40} className="text-success mb-2" />
-              <h3 className="fw-bold">100%</h3>
-              <p className="mb-0">Éxito</p>
-            </div>
-            <div className="col-4 mb-3">
-              <FaProjectDiagram size={40} className="text-primary mb-2" />
-              <h3 className="fw-bold">150+</h3>
-              <p className="mb-0">Proyectos</p>
-            </div>
-            <div className="col-4 mb-3">
-              <FaUsers size={40} className="text-warning mb-2" />
-              <h3 className="fw-bold">20+</h3>
-              <p className="mb-0">Años experiencia</p>
-            </div>
+            {estadisticas.map((e) => (
+              <div key={e.id} className="col-4 mb-3">
+                {e.icon}
+                <h3 className="fw-bold">{e.valor}</h3>
+                <p className="mb-0">{e.texto}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
