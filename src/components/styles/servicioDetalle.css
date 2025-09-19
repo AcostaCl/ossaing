@@ -1,0 +1,10 @@
+ul li {
+  margin-bottom: 0.5rem; /* separa un poco los puntos */
+  list-style-type: disc; /* viñetas normales */
+  padding-left: 1.2rem;
+  color: #000; /* color del texto */
+}
+
+ul li::marker {
+  color: #0a3576; /* color de la viñeta */
+}
