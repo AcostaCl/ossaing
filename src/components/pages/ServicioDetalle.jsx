@@ -65,8 +65,6 @@ function ServicioDetalle() {
   return (
     <div className="container py-5">
       <h1 className="mb-4">{servicio.titulo}</h1>
-
-      {/* Descripción */}
       {Array.isArray(servicio.desc) ? (
         <ul className="mb-4 ">
           {servicio.desc.map((d, i) => (
@@ -76,8 +74,6 @@ function ServicioDetalle() {
       ) : (
         <p className="lead">{servicio.desc}</p>
       )}
-
-      {/* Beneficios */}
       <h3 className="mt-5 mb-4">¿Por qué elegirnos?</h3>
       <ul className="list-group mb-5">
         {servicio.beneficios.map((b, i) => (
@@ -86,8 +82,6 @@ function ServicioDetalle() {
           </li>
         ))}
       </ul>
-
-      {/* Proyectos */}
       <h3>Proyectos relacionados</h3>
       <div className="row">
         {servicio.proyectos.map((img, i) => (
@@ -99,13 +93,6 @@ function ServicioDetalle() {
             />
           </div>
         ))}
-      </div>
-
-      {/* Botón de contacto */}
-      <div className="text-center mt-5">
-        <a href="/#contacto" className="btn btn-primary btn-lg">
-          Solicitar presupuesto
-        </a>
       </div>
     </div>
   );
