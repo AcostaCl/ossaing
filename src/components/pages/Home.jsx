@@ -50,12 +50,6 @@ function Home() {
     "CORDON CUNETA",
   ];
 
-  const proyectos = [
-    { id: 1, img: "/images/proyecto1.jpg", alt: "Proyecto 1" },
-    { id: 2, img: "/images/proyecto2.jpg", alt: "Proyecto 2" },
-    { id: 3, img: "/images/proyecto3.jpg", alt: "Proyecto 3" },
-  ];
-
   const clientes = [
     { id: 1, img: Edet, alt: "edet logo" },
     { id: 2, img: Gasnor, alt: "gasnor logo" },
@@ -152,17 +146,6 @@ function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section id="proyectos" className="py-5 container">
-        <h2>Proyectos</h2>
-        <div className="row">
-          {proyectos.map((p) => (
-            <div key={p.id} className="col-md-4">
-              <img src={p.img} className="img-fluid rounded" alt={p.alt} />
-            </div>
-          ))}
         </div>
       </section>
 

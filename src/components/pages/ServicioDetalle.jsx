@@ -1,5 +1,7 @@
 import { useParams } from "react-router";
 import "../styles/servicioDetalle.css";
+import { FaArrowLeft } from "react-icons/fa";
+
 function ServicioDetalle() {
   const { id } = useParams();
 
@@ -93,6 +95,13 @@ function ServicioDetalle() {
             />
           </div>
         ))}
+      </div>
+
+      <div className=" mt-5">
+        <a href="/#contacto" className="btn btn-link btn-md">
+          <FaArrowLeft className="me-2" />
+          Volver atras
+        </a>
       </div>
     </div>
   );
