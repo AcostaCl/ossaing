@@ -60,9 +60,9 @@ function Home() {
     { id: 1, img: Edet, alt: "edet logo" },
     { id: 2, img: Gasnor, alt: "gasnor logo" },
     { id: 3, img: Supercemento, alt: "supercemento logo" },
-    { id: 2, img: Pecom, alt: "pecom logo" },
-    { id: 2, img: Tgn, alt: "tgn logo" },
-    { id: 2, img: Citrusvil, alt: "citrusvil logo" },
+    { id: 4, img: Pecom, alt: "pecom logo" },
+    { id: 5, img: Tgn, alt: "tgn logo" },
+    { id: 6, img: Citrusvil, alt: "citrusvil logo" },
   ];
 
   const estadisticas = [
@@ -166,12 +166,12 @@ function Home() {
         </div>
       </section>
 
-      <section className="py-5 bg-light">
+      <section className="py-5">
         <div className="container text-center">
-          <h2>Nuestros clientes</h2>
+          <h2 className="mb-5 ">Nuestros clientes</h2>
           <div className="d-flex justify-content-center gap-5 flex-wrap mt-4">
             {clientes.map((c) => (
-              <img key={c.id} src={c.img} alt={c.alt} height="50" />
+              <img key={c.id} src={c.img} alt={c.alt} height="70" />
             ))}
           </div>
         </div>
