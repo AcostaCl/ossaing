@@ -6,11 +6,16 @@
 }
 
 .btn-home {
-  width: 120px; 
+  width: 120px;
 }
 
 .imagen-home {
   height: 280px;
   width: 500px;
   object-fit: cover;
+}
+.card-img-servicio {
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
 }

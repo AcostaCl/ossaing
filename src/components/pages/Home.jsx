@@ -1,11 +1,12 @@
 import { Link } from "react-router";
 import "../styles/Home.css";
 import { Container, Row, Col } from "react-bootstrap";
+import { FaCheckCircle, FaProjectDiagram, FaUsers } from "react-icons/fa";
 import Soldar from "../img/soldar.png";
 import Gasoc from "../img/gasoc.jpg";
 import Tuneleria from "../img/tuneleria.jpg";
 import Camara from "../img/CAMARA-2.png";
-import { FaCheckCircle, FaProjectDiagram, FaUsers } from "react-icons/fa";
+import Otroserv from "../img/otroserv.jpg";
 
 function Home() {
   const servicios = [
@@ -31,7 +32,7 @@ function Home() {
       id: "otros",
       titulo: "Otros servicios",
       desc: "Servicios-Flota-Herramientas",
-      img: "/images/otros.jpg",
+      img: Otroserv,
     },
   ];
 
@@ -84,7 +85,11 @@ function Home() {
             {servicios.map((s) => (
               <div key={s.id} className="col-md-3 mb-4">
                 <div className="card h-100 shadow d-flex flex-column">
-                  <img src={s.img} className="card-img-top" alt={s.titulo} />
+                  <img
+                    src={s.img}
+                    className="card-img-top card-img-servicio"
+                    alt={s.titulo}
+                  />
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title">{s.titulo}</h5>
                     <p className="card-text flex-grow-1">{s.desc}</p>
@@ -174,6 +179,7 @@ function Home() {
           </div>
         </div>
       </section>
+
       <section className="container my-5">
         <div className="align-items-center bg-light rounded p-4 shadow-sm">
           <div className="d-flex justify-content-center text-center flex-wrap">
