@@ -7,6 +7,12 @@ import Gasoc from "../img/gasoc.jpg";
 import Tuneleria from "../img/tuneleria.jpg";
 import Camara from "../img/CAMARA-2.png";
 import Otroserv from "../img/otroserv.jpg";
+import Citrusvil from "../img/citrusvil.png";
+import Edet from "../img/edet.png";
+import Gasnor from "../img/gasnor.png";
+import Tgn from "../img/tgn.png";
+import Supercemento from "../img/supercemento.png";
+import Pecom from "../img/pecom.png";
 
 function Home() {
   const servicios = [
@@ -51,9 +57,12 @@ function Home() {
   ];
 
   const clientes = [
-    { id: 1, img: "/images/cliente1.png", alt: "Cliente 1" },
-    { id: 2, img: "/images/cliente2.png", alt: "Cliente 2" },
-    { id: 3, img: "/images/cliente3.png", alt: "Cliente 3" },
+    { id: 1, img: Edet, alt: "edet logo" },
+    { id: 2, img: Gasnor, alt: "gasnor logo" },
+    { id: 3, img: Supercemento, alt: "supercemento logo" },
+    { id: 2, img: Pecom, alt: "pecom logo" },
+    { id: 2, img: Tgn, alt: "tgn logo" },
+    { id: 2, img: Citrusvil, alt: "citrusvil logo" },
   ];
 
   const estadisticas = [
@@ -169,24 +178,25 @@ function Home() {
       </section>
 
       <section className="container my-5" id="contacto">
-        <h2 className="mb-4">Contacto</h2>
+        <hr />
+        <h2 className="mb-2 ">Contacto</h2>
         <div className="row">
-          <div className="col-lg-6 mb-4">
+          <div className="col-lg-6 mb-4 mt-5 ">
             <p>
               <strong>Dirección:</strong> Av. Mate de Luna 1620, 5°B – San
               Miguel de Tucumán
             </p>
             <p>
-              <strong>Teléfono:</strong> +54 381 100 6000
+              <strong>Teléfono:</strong> +54 381 508-9330
             </p>
             <p>
-              <strong>Email:</strong> contacto@ossaingconst.com.ar
+              <strong>Email:</strong> oscar.santillo@gmail.com
             </p>
             <p>
-              <strong>Horario:</strong> Lunes a Viernes, 9:00 - 18:00
+              <strong>Horario:</strong> Lunes a Viernes, 8:00 - 18:00
             </p>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-5">
             <div className="ratio ratio-16x9">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.1579999999997!2d-65.21759078500001!3d-26.83412398315526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c1c2c2b2c2d%3A0x1234567890abcdef!2sAv.%20Mate%20de%20Luna%201620%2C%20San%20Miguel%20de%20Tucum%C3%A1n!5e0!3m2!1ses!2sar!4v1694534098765!5m2!1ses!2sar"
