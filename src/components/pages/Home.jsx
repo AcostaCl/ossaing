@@ -91,7 +91,7 @@ function Home() {
         </div>
       </header>
 
-      <section className="py-5 container">
+      <section id="acerca-de" className="py-5 container">
         <Container className="my-5">
           <Row className="align-items-center">
             <hr />

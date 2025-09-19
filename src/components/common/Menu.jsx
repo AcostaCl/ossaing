@@ -40,8 +40,8 @@ function Menu() {
             <Nav.Link onClick={() => handleScroll("servicios")}>
               Servicios
             </Nav.Link>
-            <Nav.Link onClick={() => handleScroll("proyectos")}>
-              Proyectos
+            <Nav.Link onClick={() => handleScroll("acerca-de")}>
+              Sobre nosotros
             </Nav.Link>
             <Nav.Link onClick={() => handleScroll("contacto")}>
               Contacto
