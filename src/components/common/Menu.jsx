@@ -1,4 +1,5 @@
-import { Link, useNavigate, useLocation } from "react-router";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { useNavigate, useLocation } from "react-router";
 
 function Menu() {
   const navigate = useNavigate();
@@ -6,7 +7,7 @@ function Menu() {
 
   const handleScroll = (section) => {
     if (location.pathname.startsWith("/servicio/")) {
-      navigate("/"); 
+      navigate("/"); // ir a inicio primero
       setTimeout(() => {
         const el = document.getElementById(section);
         if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -18,54 +19,26 @@ function Menu() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container">
-        <Link className="navbar-brand" to="/">
-          OSSA
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navMenu"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div id="navMenu" className="collapse navbar-collapse">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Inicio
-              </Link>
-            </li>
-            <li className="nav-item">
-              <button
-                className="nav-link btn btn-link"
-                onClick={() => handleScroll("servicios")}
-              >
-                Servicios
-              </button>
-            </li>
-            <li className="nav-item">
-              <button
-                className="nav-link btn btn-link"
-                onClick={() => handleScroll("proyectos")}
-              >
-                Proyectos
-              </button>
-            </li>
-            <li className="nav-item">
-              <button
-                className="nav-link btn btn-link"
-                onClick={() => handleScroll("contacto")}
-              >
-                Contacto
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+      <Container>
+        <Navbar.Brand href="/">OSSA</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link href="/">Inicio</Nav.Link>
+            <Nav.Link onClick={() => handleScroll("servicios")}>
+              Servicios
+            </Nav.Link>
+            <Nav.Link onClick={() => handleScroll("proyectos")}>
+              Proyectos
+            </Nav.Link>
+            <Nav.Link onClick={() => handleScroll("contacto")}>
+              Contacto
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
