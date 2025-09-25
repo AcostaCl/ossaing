@@ -131,7 +131,16 @@ function Home() {
             {servicios.map((s) => (
               <div key={s.id} className="col-md-3 mb-4">
                 <div className="card h-100 shadow d-flex flex-column">
-                  <img src={s.img} className="card-img-top" alt={s.titulo} />
+                  <div className="card-img-wrapper">
+                    <Link to={`/servicio/${s.id}`}>
+                      <img
+                        src={s.img}
+                        className="card-img-top"
+                        alt={s.titulo}
+                      />
+                      <div className="overlay"></div>
+                    </Link>
+                  </div>
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title">{s.titulo}</h5>
                     <p className="card-text flex-grow-1">{s.desc}</p>

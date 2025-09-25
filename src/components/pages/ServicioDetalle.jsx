@@ -25,11 +25,6 @@ function ServicioDetalle() {
         "Uso de tecnología innovadora",
         "Seguridad garantizada en cada proyecto",
       ],
-      proyectos: [
-        "/images/proyecto1.jpg",
-        "/images/proyecto2.jpg",
-        "/images/proyecto3.jpg",
-      ],
     },
     tuneleria: {
       titulo: "Tunelería inteligente",
@@ -39,7 +34,6 @@ function ServicioDetalle() {
         "Menor impacto ambiental",
         "Mayor eficiencia en tiempos",
       ],
-      proyectos: ["/images/tunel1.jpg", "/images/tunel2.jpg"],
     },
     estacion: {
       titulo: "Estaciones reguladoras",
@@ -49,13 +43,11 @@ function ServicioDetalle() {
         "Monitoreo en tiempo real",
         "Certificación oficial",
       ],
-      proyectos: ["/images/estacion1.jpg", "/images/estacion2.jpg"],
     },
     otros: {
       titulo: "Otros servicios",
       desc: "Agua potable, energía y obras complementarias.",
       beneficios: ["Soluciones integrales", "Equipo multidisciplinario"],
-      proyectos: ["/images/otros1.jpg"],
     },
   };
 
@@ -68,7 +60,7 @@ function ServicioDetalle() {
     <div className="container py-5">
       <h1 className="mb-4">{servicio.titulo}</h1>
       {Array.isArray(servicio.desc) ? (
-        <ul className="mb-4 ">
+        <ul className="mb-4">
           {servicio.desc.map((d, i) => (
             <li key={i}>{d}</li>
           ))}
@@ -76,6 +68,7 @@ function ServicioDetalle() {
       ) : (
         <p className="lead">{servicio.desc}</p>
       )}
+
       <h3 className="mt-5 mb-4">¿Por qué elegirnos?</h3>
       <ul className="list-group mb-5">
         {servicio.beneficios.map((b, i) => (
@@ -84,20 +77,56 @@ function ServicioDetalle() {
           </li>
         ))}
       </ul>
-      <h3>Proyectos relacionados</h3>
-      <div className="row">
-        {servicio.proyectos.map((img, i) => (
-          <div key={i} className="col-md-4 mb-3">
-            <img
-              src={img}
-              alt={`Proyecto ${i + 1}`}
-              className="img-fluid rounded shadow"
-            />
+      {id === "otros" && (
+        <div>
+          <h3>Videos</h3>
+          <div className="row">
+            <div className="col-md-4 mb-3">
+              <div className="ratio ratio-16x9">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/dIqIFQ4r9-I?si=2-91ODZ5fmK0wR-2"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div className="col-md-4 mb-3">
+              <div className="ratio ratio-16x9">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/F76XDDEvb24?si=KrIQbNL-E30WaQ0M"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div className="col-md-4 mb-3">
+              <div className="ratio ratio-16x9">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/oeuEuQRhuSk?si=6tqALeJ57VkQkuD-"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
           </div>
-        ))}
-      </div>
-
-      <div className=" mt-5">
+        </div>
+      )}
+      <div className="mt-5">
         <a href="/#contacto" className="btn btn-link btn-md">
           <FaArrowLeft className="me-2" />
           Volver atras
