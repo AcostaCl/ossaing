@@ -13,6 +13,7 @@ import Gasnor from "../img/gasnor.png";
 import Tgn from "../img/tgn.png";
 import Supercemento from "../img/supercemento.png";
 import Pecom from "../img/pecom.png";
+import banner from "../../../public/herobanner.mp4";
 
 function Home() {
   const servicios = [
@@ -82,12 +83,19 @@ function Home() {
 
   return (
     <div>
-      <header className="hero d-flex align-items-center text-dark banner-estilos">
-        <div className="container">
-          <h1 className="display-6 text-light fw-bold text-justify">
-            Más de 20 años brindando soluciones en <br /> gas, tuneles e
-            ingeniería
-          </h1>
+      <header className="hero">
+        <video className="video-bg" autoPlay loop muted playsInline>
+          <source src={banner} type="video/mp4" />
+          Tu navegador no soporta videos en HTML5.
+        </video>
+        <div className="overlay"></div>
+        <div className="hero-content d-flex align-items-center">
+          <div className="container text-center">
+            <h1 className="display-6 text-light fw-bold text-justify">
+              Más de 20 años brindando soluciones en <br /> gas, túneles e
+              ingeniería
+            </h1>
+          </div>
         </div>
       </header>
 
