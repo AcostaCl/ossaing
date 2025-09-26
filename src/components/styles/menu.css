@@ -64,4 +64,11 @@
   .nav-link-custom:hover::after {
     width: 20%;
   }
+  .navbar-brand {
+    font-size: 0.5rem;
+  }
+
+  .navbar-brand img {
+    width: 30px;
+  }
 }
