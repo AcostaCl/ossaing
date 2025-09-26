@@ -94,18 +94,16 @@ function Home() {
         <div className="overlay"></div>
         <div className="hero-content d-flex align-items-center">
           <div className="container ">
-            <h1 className="display-8 text-light fw-bold ">
+            <h1 className="display-5 text-light fw-bold text-start ">
               Más de 20 años brindando soluciones en <br /> gas, túneles e
               ingeniería
             </h1>
           </div>
         </div>
       </header>
-
       <section id="acerca-de" className="py-5 container">
         <Container className="my-5">
           <Row className="align-items-center">
-            <hr />
             <Col xs={12} md={6}>
               <h2 className="mb-4 text-primary">Quiénes somos</h2>
               <p>
@@ -131,9 +129,9 @@ function Home() {
               />
             </Col>
           </Row>
-          <hr />
         </Container>
-      </section>
+      </section>{" "}
+      <hr />
       <section id="servicios" className="py-5 bg-light">
         <div className="container">
           <h2 className="mb-4">Servicios</h2>
@@ -167,7 +165,6 @@ function Home() {
           </div>
         </div>
       </section>
-
       <section className="py-5">
         <div className="container ">
           <h2 className="mb-5 ">Nuestros clientes</h2>
@@ -178,23 +175,32 @@ function Home() {
           </div>
         </div>
       </section>
-
       <section className="container my-5" id="contacto">
         <hr />
         <h2 className="mb-2 ">Contacto</h2>
         <div className="row">
-          <div className="col-lg-6 mb-4 mt-5 ">
+          <div className="col-lg-6 mb-4 mt-5">
             <p>
               <FaMapMarkerAlt className="text-primary me-1 " />
               Av. Mate de Luna 1620, 5°B – San Miguel de Tucumán
             </p>
             <p>
               <FaPhoneAlt className="text-primary me-1" />
-              +54 381 508-9330
+              <a
+                href="tel:+543815089330"
+                className="text-decoration-none text-dark"
+              >
+                +54 381 508-9330
+              </a>
             </p>
             <p>
               <IoMdMail className="text-primary me-1" />
-              oscar.santillo@gmail.com
+              <a
+                href="mailto:oscar.santillo@gmail.com"
+                className="text-decoration-none text-dark"
+              >
+                oscar.santillo@gmail.com
+              </a>
             </p>
             <p>
               <TbClockHour10Filled className="text-primary me-1" />
@@ -217,7 +223,6 @@ function Home() {
           </div>
         </div>
       </section>
-
       <section className="container my-5">
         <div className="align-items-center bg-light rounded p-4 shadow-sm">
           <div className="d-flex justify-content-center text-center flex-wrap">

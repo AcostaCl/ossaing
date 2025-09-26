@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import "../styles/servicioDetalle.css";
 import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router";
 
 function ServicioDetalle() {
   const { id } = useParams();
@@ -28,7 +29,7 @@ function ServicioDetalle() {
     },
     tuneleria: {
       titulo: "Tunelería inteligente",
-      desc: "Instalación subterránea de ductos y cables sin afectar la superficie. Tecnología HDD con control preciso de recorrido y profundidad.",
+      desc: "El tuneleado horizontal dirigido es un método de instalación inocuo de ductos de diferentes servicios, que deben ser soterrados. El método HDD permite la instalación inocua de cañerías y o cables bajo la superficie de terrenos naturales, calzadas, autopistas, vías férreas, ríos, canales, etc sin alterar dichas superficies.  Tanto el recorrido como la profundidad son monitoreados desde la superficie por nuestro personal con equipos de radio-detección de última tecnología (Vermeer), con la exactitud que exija el producto a instalar (verbigracia pendientes de cloacas).",
       beneficios: [
         "Alta precisión",
         "Menor impacto ambiental",
@@ -37,7 +38,21 @@ function ServicioDetalle() {
     },
     estacion: {
       titulo: "Estaciones reguladoras",
-      desc: "Proyecto, construcción y mantenimiento de estaciones reguladoras de presión. Incluye calibración, pruebas de hermeticidad, pintura, aislaciones y ejecución de cámaras aéreas y subterráneas.",
+      desc: [
+        "Ingeniería de proyecto y ejecución de obras de Estaciones reguladoras de Presión.",
+        "Construcción de Estaciones de Medición y Regulación de presión.",
+        "Mantenimiento predictivo y calibración de Estaciones Reguladoras de Presión.",
+        "Mantenimiento integral, mediciones de nivel de ruido.",
+        "Mantenimiento, Montaje y Calibración de Sist. de Alivio.",
+        "Pruebas de hermeticidad y resistencia.",
+        "Arenado y Pintura de Instalaciones Aéreas.",
+        "Relevamiento de aislaciones (aéreas y enterradas)",
+        "Mantenimiento de Aislaciones (reemplazo de canutos, arandelas, espárragos, limpieza de junta aislante)",
+        "Mantenimiento de cámaras para válvulas de bloqueo.",
+        "Cámaras aéreas y subterráneas, Salas de Instrumentación.",
+        "Excavación de Cámaras subterráneas.",
+        "Ejecución de Tabiques de hormigón.",
+      ],
       beneficios: [
         "Seguridad garantizada",
         "Monitoreo en tiempo real",
@@ -46,7 +61,7 @@ function ServicioDetalle() {
     },
     otros: {
       titulo: "Otros servicios",
-      desc: "Agua potable, energía y obras complementarias.",
+      desc: "Obras civiles, asesoramiento",
       beneficios: ["Soluciones integrales", "Equipo multidisciplinario"],
     },
   };
@@ -77,6 +92,7 @@ function ServicioDetalle() {
           </li>
         ))}
       </ul>
+
       {id === "otros" && (
         <div>
           <h3>Videos</h3>
@@ -88,10 +104,10 @@ function ServicioDetalle() {
                   height="315"
                   src="https://www.youtube.com/embed/dIqIFQ4r9-I?si=2-91ODZ5fmK0wR-2"
                   title="YouTube video player"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
                 ></iframe>
               </div>
             </div>
@@ -102,10 +118,10 @@ function ServicioDetalle() {
                   height="315"
                   src="https://www.youtube.com/embed/F76XDDEvb24?si=KrIQbNL-E30WaQ0M"
                   title="YouTube video player"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
                 ></iframe>
               </div>
             </div>
@@ -116,21 +132,22 @@ function ServicioDetalle() {
                   height="315"
                   src="https://www.youtube.com/embed/oeuEuQRhuSk?si=6tqALeJ57VkQkuD-"
                   title="YouTube video player"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
                 ></iframe>
               </div>
             </div>
           </div>
         </div>
       )}
+
       <div className="mt-5">
-        <a href="/#contacto" className="btn btn-link btn-md">
+        <Link to="/" className="btn btn-link btn-md">
           <FaArrowLeft className="me-2" />
-          Volver atras
-        </a>
+          Volver atrás
+        </Link>
       </div>
     </div>
   );

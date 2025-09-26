@@ -9,17 +9,15 @@ const Menu = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Detecta scroll para agregar clase
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Función para scroll suave
   const handleScroll = (section) => {
     if (location.pathname.startsWith("/servicio/")) {
-      navigate("/"); // ir a inicio primero
+      navigate("/"); 
       setTimeout(() => {
         const el = document.getElementById(section);
         if (el) el.scrollIntoView({ behavior: "smooth" });
