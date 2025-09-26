@@ -1,11 +1,22 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { useEffect, useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router";
 import logo from "../../assets/logo-ossa.png";
 import "../styles/menu.css";
-function Menu() {
+
+const Menu = () => {
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Detecta scroll para agregar clase
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Función para scroll suave
   const handleScroll = (section) => {
     if (location.pathname.startsWith("/servicio/")) {
       navigate("/"); // ir a inicio primero
@@ -20,13 +31,19 @@ function Menu() {
   };
 
   return (
-    <Navbar bg="light" variant="light" expand="lg" sticky="top">
+    <Navbar
+      expand="lg"
+      variant="light"
+      fixed="top"
+      className={`custom-navbar ${scrolled ? "scrolled" : ""}`}
+      collapseOnSelect
+    >
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
             src={logo}
             alt="logo Ossa ing"
-            className="img-fluid me-2"
+            className="img-fluid me-2 "
             width={50}
           />
           OSSA Ingeniería y Construcción S.R.L
@@ -34,16 +51,25 @@ function Menu() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/">
+            <Nav.Link as={Link} to="/" className="nav-link-custom">
               Inicio
             </Nav.Link>
-            <Nav.Link onClick={() => handleScroll("servicios")}>
+            <Nav.Link
+              onClick={() => handleScroll("servicios")}
+              className="nav-link-custom"
+            >
               Servicios
             </Nav.Link>
-            <Nav.Link onClick={() => handleScroll("acerca-de")}>
+            <Nav.Link
+              onClick={() => handleScroll("acerca-de")}
+              className="nav-link-custom"
+            >
               Sobre nosotros
             </Nav.Link>
-            <Nav.Link onClick={() => handleScroll("contacto")}>
+            <Nav.Link
+              onClick={() => handleScroll("contacto")}
+              className="nav-link-custom"
+            >
               Contacto
             </Nav.Link>
           </Nav>
@@ -51,6 +77,6 @@ function Menu() {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default Menu;

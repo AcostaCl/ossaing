@@ -1,1 +1,67 @@
+.navbar-brand img {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  width: 35px;
+  margin-bottom: 10px;
+}
 
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+.custom-navbar {
+  transition: background-color 0.3s ease;
+  box-shadow: none;
+}
+
+.navbar-brand {
+  color: white !important;
+}
+
+.custom-navbar .nav-link {
+  color: white;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link:focus {
+  color: #dcdada;
+}
+
+.navbar.scrolled {
+  background-color: rgba(55, 53, 53, 0.6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.nav-link-custom {
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  margin: 0 0.5rem;
+}
+
+.nav-link-custom::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #7ba1c3;
+  transition: width 0.3s ease;
+}
+
+.nav-link-custom:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .nav-link-custom::after {
+    width: 0;
+  }
+
+  .nav-link-custom:hover::after {
+    width: 20%;
+  }
+}

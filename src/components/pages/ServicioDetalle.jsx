@@ -57,7 +57,7 @@ function ServicioDetalle() {
     return <h2 className="text-center mt-5">Servicio no encontrado</h2>;
 
   return (
-    <div className="container py-5">
+    <div className="container py-5 mt-4">
       <h1 className="mb-4">{servicio.titulo}</h1>
       {Array.isArray(servicio.desc) ? (
         <ul className="mb-4">

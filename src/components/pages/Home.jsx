@@ -14,6 +14,9 @@ import Tgn from "../img/tgn.png";
 import Supercemento from "../img/supercemento.png";
 import Pecom from "../img/pecom.png";
 import banner from "../../../public/herobanner.mp4";
+import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
+import { TbClockHour10Filled } from "react-icons/tb";
 
 function Home() {
   const servicios = [
@@ -44,11 +47,11 @@ function Home() {
   ];
 
   const serviciosExtra = [
-    "GAS NATURAL",
-    "AGUA POTABLE",
+    " GAS NATURAL",
+    " AGUA POTABLE",
     "CLOACAS",
-    "ENERGIA ELÉCTRICA",
-    "CORDON CUNETA",
+    " ENERGIA ELÉCTRICA",
+    " CORDON CUNETA",
   ];
 
   const clientes = [
@@ -90,8 +93,8 @@ function Home() {
         </video>
         <div className="overlay"></div>
         <div className="hero-content d-flex align-items-center">
-          <div className="container text-center">
-            <h1 className="display-6 text-light fw-bold text-justify">
+          <div className="container ">
+            <h1 className="display-8 text-light fw-bold ">
               Más de 20 años brindando soluciones en <br /> gas, túneles e
               ingeniería
             </h1>
@@ -131,13 +134,12 @@ function Home() {
           <hr />
         </Container>
       </section>
-
       <section id="servicios" className="py-5 bg-light">
         <div className="container">
-          <h2 className="text-center mb-4">Servicios</h2>
+          <h2 className="mb-4">Servicios</h2>
           <div className="row">
             {servicios.map((s) => (
-              <div key={s.id} className="col-md-3 mb-4">
+              <div key={s.id} className="col-12 col-md-6 col-lg-3 mb-4">
                 <div className="card h-100 shadow d-flex flex-column">
                   <div className="card-img-wrapper">
                     <Link to={`/servicio/${s.id}`}>
@@ -167,7 +169,7 @@ function Home() {
       </section>
 
       <section className="py-5">
-        <div className="container text-center">
+        <div className="container ">
           <h2 className="mb-5 ">Nuestros clientes</h2>
           <div className="d-flex justify-content-center gap-5 flex-wrap mt-4">
             {clientes.map((c) => (
@@ -183,17 +185,20 @@ function Home() {
         <div className="row">
           <div className="col-lg-6 mb-4 mt-5 ">
             <p>
-              <strong>Dirección:</strong> Av. Mate de Luna 1620, 5°B – San
-              Miguel de Tucumán
+              <FaMapMarkerAlt className="text-primary me-1 " />
+              Av. Mate de Luna 1620, 5°B – San Miguel de Tucumán
             </p>
             <p>
-              <strong>Teléfono:</strong> +54 381 508-9330
+              <FaPhoneAlt className="text-primary me-1" />
+              +54 381 508-9330
             </p>
             <p>
-              <strong>Email:</strong> oscar.santillo@gmail.com
+              <IoMdMail className="text-primary me-1" />
+              oscar.santillo@gmail.com
             </p>
             <p>
-              <strong>Horario:</strong> Lunes a Viernes, 8:00 - 18:00
+              <TbClockHour10Filled className="text-primary me-1" />
+              Lunes a Viernes, 8:00 - 18:00
             </p>
           </div>
           <div className="col-lg-5">
