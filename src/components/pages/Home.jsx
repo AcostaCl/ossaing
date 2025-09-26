@@ -1,7 +1,9 @@
-import { Link } from "react-router";
-import "../styles/Home.css";
-import { Container, Row, Col } from "react-bootstrap";
-import { FaCheckCircle, FaProjectDiagram, FaUsers } from "react-icons/fa";
+import Hero from "../common/Hero.jsx";
+import SeccionAcerca from "../common/SeccionAcerca.jsx";
+import ServicioCard from "../common/ServicioCard.jsx";
+import Clientes from "../common/Clientes.jsx";
+import Estadisticas from "../common/Estadisticas.jsx";
+import Contacto from "../common/Contacto.jsx";
 import Soldar from "../img/soldar.png";
 import Gasoc from "../img/gasoc.jpg";
 import Tuneleria from "../img/tuneleria.jpg";
@@ -13,10 +15,8 @@ import Gasnor from "../img/gasnor.png";
 import Tgn from "../img/tgn.png";
 import Supercemento from "../img/supercemento.png";
 import Pecom from "../img/pecom.png";
-import banner from "../../../public/herobanner.mp4";
-import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
-import { TbClockHour10Filled } from "react-icons/tb";
+import "../styles/home.css";
+import { FaCheckCircle, FaProjectDiagram, FaUsers } from "react-icons/fa";
 
 function Home() {
   const servicios = [
@@ -29,7 +29,7 @@ function Home() {
     {
       id: "tuneleria",
       titulo: "Tunelería inteligente",
-      desc: "Instalación subterránea de ductos y cables sin afectar la superficie. Tecnología HDD con control preciso de recorrido y profundidad.",
+      desc: "Instalación subterránea de ductos y cables sin afectar la superficie.",
       img: Tuneleria,
     },
     {
@@ -47,13 +47,12 @@ function Home() {
   ];
 
   const serviciosExtra = [
-    " GAS NATURAL",
-    " AGUA POTABLE",
+    "GAS NATURAL",
+    "AGUA POTABLE",
     "CLOACAS",
-    " ENERGIA ELÉCTRICA",
-    " CORDON CUNETA",
+    "ENERGIA ELÉCTRICA",
+    "CORDON CUNETA",
   ];
-
   const clientes = [
     { id: 1, img: Edet, alt: "edet logo" },
     { id: 2, img: Gasnor, alt: "gasnor logo" },
@@ -86,156 +85,26 @@ function Home() {
 
   return (
     <div>
-      <header className="hero">
-        <video className="video-bg" autoPlay loop muted playsInline>
-          <source src={banner} type="video/mp4" />
-          Tu navegador no soporta videos en HTML5.
-        </video>
-        <div className="overlay"></div>
-        <div className="hero-content d-flex align-items-center">
-          <div className="container ">
-            <h1 className="display-5 text-light fw-bold text-start ">
-              Más de 20 años brindando soluciones en <br /> gas, túneles e
-              ingeniería
-            </h1>
-          </div>
-        </div>
-      </header>
-      <section id="acerca-de" className="py-5 container">
-        <Container className="my-5">
-          <Row className="align-items-center">
-            <Col xs={12} md={6}>
-              <h2 className="mb-4 text-primary">Quiénes somos</h2>
-              <p>
-                Somos una empresa radicada en San Miguel de Tucumán, dedicados
-                hace más de 20 años a la elaboración de proyectos vinculados al
-                servicio del gas natural y gas licuado. Dentro de nuestros
-                servicios también ofrecemos:
-              </p>
-              <p>
-                {serviciosExtra.map((serv, i) => (
-                  <span key={i}>
-                    {serv} <br />
-                  </span>
-                ))}
-              </p>
-            </Col>
-
-            <Col xs={12} md={6} className="text-center">
-              <img
-                src={Soldar}
-                alt="Ejemplo"
-                className=" rounded shadow imagen-home"
-              />
-            </Col>
-          </Row>
-        </Container>
-      </section>{" "}
-      <hr />
+      <Hero />
+      <SeccionAcerca
+        serviciosExtra={serviciosExtra}
+        img={Soldar}
+        titulo="Quiénes somos"
+        descripcion="Somos una empresa radicada en San Miguel de Tucumán, dedicados hace más de 20 años a la elaboración de proyectos vinculados al servicio del gas natural y gas licuado."
+      />{" "}
       <section id="servicios" className="py-5 bg-light">
         <div className="container">
           <h2 className="mb-4">Servicios</h2>
           <div className="row">
             {servicios.map((s) => (
-              <div key={s.id} className="col-12 col-md-6 col-lg-3 mb-4">
-                <div className="card h-100 shadow d-flex flex-column">
-                  <div className="card-img-wrapper">
-                    <Link to={`/servicio/${s.id}`}>
-                      <img
-                        src={s.img}
-                        className="card-img-top"
-                        alt={s.titulo}
-                      />
-                      <div className="overlay"></div>
-                    </Link>
-                  </div>
-                  <div className="card-body d-flex flex-column">
-                    <h5 className="card-title">{s.titulo}</h5>
-                    <p className="card-text flex-grow-1">{s.desc}</p>
-                    <Link
-                      to={`/servicio/${s.id}`}
-                      className="btn btn-outline-primary mt-auto btn-home"
-                    >
-                      Ver más
-                    </Link>
-                  </div>
-                </div>
-              </div>
+              <ServicioCard key={s.id} {...s} />
             ))}
           </div>
         </div>
       </section>
-      <section className="py-5">
-        <div className="container ">
-          <h2 className="mb-5 ">Nuestros clientes</h2>
-          <div className="d-flex justify-content-center gap-5 flex-wrap mt-4">
-            {clientes.map((c) => (
-              <img key={c.id} src={c.img} alt={c.alt} height="70" />
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="container my-5" id="contacto">
-        <hr />
-        <h2 className="mb-2 ">Contacto</h2>
-        <div className="row">
-          <div className="col-lg-6 mb-4 mt-5">
-            <p>
-              <FaMapMarkerAlt className="text-primary me-1 " />
-              Av. Mate de Luna 1620, 5°B – San Miguel de Tucumán
-            </p>
-            <p>
-              <FaPhoneAlt className="text-primary me-1" />
-              <a
-                href="tel:+543815089330"
-                className="text-decoration-none text-dark"
-              >
-                +54 381 508-9330
-              </a>
-            </p>
-            <p>
-              <IoMdMail className="text-primary me-1" />
-              <a
-                href="mailto:oscar.santillo@gmail.com"
-                className="text-decoration-none text-dark"
-              >
-                oscar.santillo@gmail.com
-              </a>
-            </p>
-            <p>
-              <TbClockHour10Filled className="text-primary me-1" />
-              Lunes a Viernes, 8:00 - 18:00
-            </p>
-          </div>
-          <div className="col-lg-5">
-            <div className="ratio ratio-16x9">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.1579999999997!2d-65.21759078500001!3d-26.83412398315526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c1c2c2b2c2d%3A0x1234567890abcdef!2sAv.%20Mate%20de%20Luna%201620%2C%20San%20Miguel%20de%20Tucum%C3%A1n!5e0!3m2!1ses!2sar!4v1694534098765!5m2!1ses!2sar"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Mapa ubicación"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="container my-5">
-        <div className="align-items-center bg-light rounded p-4 shadow-sm">
-          <div className="d-flex justify-content-center text-center flex-wrap">
-            {estadisticas.map((e) => (
-              <div key={e.id} className="col-4 mb-3">
-                {e.icon}
-                <h3 className="fw-bold">{e.valor}</h3>
-                <p className="mb-0">{e.texto}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Clientes clientes={clientes} />
+      <Contacto />
+      <Estadisticas datos={estadisticas} />
     </div>
   );
 }
