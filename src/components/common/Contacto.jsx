@@ -5,7 +5,6 @@ import { TbClockHour10Filled } from "react-icons/tb";
 function Contacto() {
   return (
     <section className="container my-5" id="contacto">
-      <hr />
       <h2 className="mb-2">Contacto</h2>
       <div className="row">
         <div className="col-lg-6 mb-4 mt-5">

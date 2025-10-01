@@ -111,8 +111,8 @@ function Home() {
         </div>
       </section>
       <Clientes clientes={clientes} />
-      <Contacto />
       <Estadisticas datos={estadisticas} />
+      <Contacto />
     </div>
   );
 }
