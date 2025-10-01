@@ -15,6 +15,10 @@ import Gasnor from "../img/gasnor.png";
 import Tgn from "../img/tgn.png";
 import Supercemento from "../img/supercemento.png";
 import Pecom from "../img/pecom.png";
+import Lbanesi from "../img/lbanesi.jpg";
+import GrupoLucci from "../img/grupolucci.jpg";
+import Codeler from "../img/codelerlogo.png";
+import ArquitecturayUrb from "../img/arquitecturayurba.jpg";
 import "../styles/home.css";
 import { FaCheckCircle, FaProjectDiagram, FaUsers } from "react-icons/fa";
 
@@ -60,6 +64,10 @@ function Home() {
     { id: 4, img: Pecom, alt: "pecom logo" },
     { id: 5, img: Tgn, alt: "tgn logo" },
     { id: 6, img: Citrusvil, alt: "citrusvil logo" },
+    { id: 7, img: Lbanesi, alt: "citrusvil logo" },
+    { id: 8, img: GrupoLucci, alt: "citrusvil logo" },
+    { id: 9, img: Codeler, alt: "citrusvil logo" },
+    { id: 10, img: ArquitecturayUrb, alt: "citrusvil logo" },
   ];
 
   const estadisticas = [
