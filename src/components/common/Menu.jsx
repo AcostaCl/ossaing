@@ -17,7 +17,7 @@ const Menu = () => {
 
   const handleScroll = (section) => {
     if (location.pathname.startsWith("/servicio/")) {
-      navigate("/"); 
+      navigate("/");
       setTimeout(() => {
         const el = document.getElementById(section);
         if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -59,7 +59,7 @@ const Menu = () => {
               Servicios
             </Nav.Link>
             <Nav.Link
-              onClick={() => handleScroll("acerca-de")}
+              onClick={() => handleScroll("acerca")}
               className="nav-link-custom"
             >
               Sobre nosotros
